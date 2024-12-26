@@ -18,6 +18,13 @@ project(stm32-oled C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 
+
+#set(StdPeriph_DIR "E:/stm32-sdk/STM32F10x_StdPeriph_Lib_V3.6.0/Libraries")
+if (NOT StdPeriph_DIR OR NOT EXISTS ${StdPeriph_DIR})
+    message(FATAL_ERROR "Please set the STM32F10x_StdPeriph_Lib path")
+endif ()
+
+
 #Uncomment for hardware floating point
 #add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
 #add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
